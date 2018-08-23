@@ -1,9 +1,9 @@
-import React, {Component} from 'react'
+import React, { PureComponent} from 'react'
 import Person from './Person/Person'
 import { ENGINE_METHOD_DIGESTS } from 'constants';
 
 
-class Persons extends Component {
+class Persons extends PureComponent {
 
   constructor(props){
     super(props)
@@ -23,11 +23,13 @@ class Persons extends Component {
     console.log('[UPDATE Person.js] inside componentWillReceiveProps')
   }
 
-  shouldComponentUpdate( nextProps, nextState ){
-    console.log('[UPDATE Person.js] inside shouldComponentUpdate', nextProps, nextState)
-    // return nextProps.persons !== this.props.persons;
-    return true;
-  }
+  // shouldComponentUpdate( nextProps, nextState ){
+  //   console.log('[UPDATE Person.js] inside shouldComponentUpdate', nextProps, nextState)
+  //   return nextProps.persons !== this.props.persons ||
+  //   nextProps.changed !== this.props.changed ||
+  //   nextProps.clicked !== this.props.clicked;
+  //   // return true;
+  // }
 
   componentWillUpdate( nextProps, nextState ){
     console.log('[UPDATE Person.js] inside componentWillUpdate', nextProps, nextState)
